@@ -19,6 +19,8 @@ The goal is to construct a portfolio that balances:
 - expected return,
 - investment risk.
 
+I optimize it using first, gurobi, and then Particle swarm optimization
+
 ---
 ## 2. Asset Returns
 
@@ -207,3 +209,15 @@ The portfolio must satisfy three main rules:
 - each asset is limited to a maximum weight of 10%.
 
 The result is a diversified long-only portfolio that balances expected profitability and investment risk.
+
+---
+
+## 11. Results
+
+Objective comparison with risk avertion λ = 1.0:
+
+
+| Solver | Objective | Expected return | Variance | Selected assets | Gap to Gurobi |
+|---|---:|---:|---:|---:|---:|
+| Gurobi | 0.001140 | 0.001386 | 0.000246 | 15 | 0.000000 |
+| PSO | 0.001052 | 0.001247 | 0.000195 | 10 | 0.000088 |
